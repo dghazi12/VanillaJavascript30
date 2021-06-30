@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Update CSS Variables with JS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="header">
+      Update CSS Variables with <span class="header-colour">JS</span>
+    </h1>
+    <div class="row">
+      <div class="action">
+        <h3>Spacing:</h3>
+        <input
+          type="range"
+          name="spacing"
+          min="10"
+          max="200"
+          value="10"
+          data-sizing="px"
+        />
+      </div>
+
+      <div class="action">
+        <h3>Blur:</h3>
+        <input
+          type="range"
+          name="blur"
+          min="0"
+          max="25"
+          value="0"
+          data-sizing="px"
+        />
+      </div>
+
+      <div class="action">
+        <h3>Base Colour:</h3>
+        <input type="color" name="base" value="#a17543" />
+      </div>
+    </div>
+
+    <div class="image-container">
+      <img src="./images/toronto.jpeg" />
+    </div>
+
+    <script>
+      const inputs = document.querySelectorAll(".action input");
+
+      function handleUpdate() {
+        const suffix = this.dataset.sizing || "";
+        console.log(suffix);
+        document.documentElement.style.setProperty(
+          `--${this.name}`,
+          this.value + suffix
+        );
+      }
+
+      inputs.forEach((input) => input.addEventListener("change", handleUpdate));
+    </script>
+  </body>
+</html>

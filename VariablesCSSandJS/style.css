@@ -1,0 +1,42 @@
+html {
+  background-color: #2f677a;
+}
+
+.header {
+  text-align: center;
+  color: aliceblue;
+}
+
+.row {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.action {
+  margin-left: 50px;
+}
+
+:root {
+  --base: #ffc600;
+  --spacing: 10px;
+  --blur: 0px;
+}
+
+img {
+  height: 50%;
+  width: 50%;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding: var(--spacing);
+  background: var(--base);
+  filter: blur(var(--blur));
+}
+
+.header-colour {
+  color: var(--base);
+}
